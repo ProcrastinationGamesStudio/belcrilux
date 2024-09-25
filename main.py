@@ -1,6 +1,6 @@
 import os
 #import platform
-#import pandas as pd
+import pandas as pd
 from bs4 import BeautifulSoup
 from datetime import datetime
 
@@ -9,24 +9,49 @@ print('\nDirectorio actual: '+os.getcwd()+'\n')
 # Ruta origenes plantillas de prueba:
 ruta_prueba=f'./.venv/pruebas/origenes/plantilla_descripciones.html'
 with open(ruta_prueba, 'r', encoding='utf-8') as archivoHtml:
-    html_bruto = archivoHtml.read()
-
-"""if platform.system() == 'Windows':
-    ruta_excel = os.path.join(os.path.expanduser("~"), "Documents", "./venv/tu_archivo.xlsx")  # Cambia "tu_archivo.xlsx"
-elif platform.system() == 'Linux' or platform.system() == 'Darwin':  # Darwin es para MacOS
-    ruta_excel = os.path.join(os.path.expanduser("~"), "Documentos", "./venv/tu_archivo.xlsx")  # Cambia "tu_archivo.xlsx"
+    html_bruto=archivoHtml.read()
+##################################################################################################################
+"""
+if platform.system()=='Windows':
+    ruta_excel=os.path.join(os.path.expanduser("~"), "Documents", "./venv/tu_archivo.xlsx")  # Cambia "tu_archivo.xlsx"
+elif platform.system()=='Linux' or platform.system()=='Darwin':  # Darwin es para MacOS
+    ruta_excel=os.path.join(os.path.expanduser("~"), "Documentos", "./venv/tu_archivo.xlsx")  # Cambia "tu_archivo.xlsx"
 else:
-    raise Exception("Sistema operativo no soportado")"""
+    raise Exception("Sistema operativo no soportado")
+"""
+##################################################################################################################
+# Codigo para excel: EN DESARROLLO
+"""
+ruta_prueba=f'./.venv/pruebas/origenes/plantilla_descripciones'
+# Comprobar la extensión del archivo
+if os.path.exists(ruta_prueba+'.xlsx'):
+    ruta_prueba=ruta_prueba+'.xlsx'
+elif os.path.exists(ruta_prueba+'.xlsm'):
+    ruta_prueba=ruta_prueba+'.xlsm'
+else:
+    raise Exception("El archivo no es un archivo Excel válido (.xlsx o .xlsm)")
 
-# Acceder a una celda específica (por ejemplo, A1)
-# Suponiendo que el HTML está en la columna 'A' y en la primera fila (índice 0)
+# Leer el archivo Excel usando un DataFrame (Marco de Datos) de Pandas
+marcoDatos=pd.read_excel(ruta_prueba, sheet_name='Nombre_de_la_hoja', engine='openpyxl')
 
-# Iterar sobre las filas de la columna 'Nombre'
-"""for index, row in pd.read_excel(ruta_excel, engine='openpyxl').iterrows():
-    html_bruto = row["description"]  # Obtener el HTML de la celda "description"""
+# Inicializar el índice de la fila del marco de datos de Panda
+i_fila_mD=0
 
-# HTML de plantilla hardcodeada ¡¡¡ NO ELIMINAR!!!
-"""html_bruto='''<div style="font-family: 'Times New Roman';">
+# Iterar hasta que la celda de la primera columna esté vacía
+while not pd.isna(marcoDatos.iloc[i_fila_mD, 0]) and marcoDatos.iloc[i_fila_mD, 0] != '':
+# Obtener y convertir los datos de la fila en una lista
+    lista_datos=marcoDatos.iloc[i_fila_mD].tolist()
+    
+# Mostrar los datos de la lista (o hacer lo que necesites con la lista)
+    print(f"Fila {i_fila_mD+1}: {lista_datos}")
+    
+# Incrementar el índice de la fila para pasar a la siguiente
+    i_fila_mD+=1
+"""
+##################################################################################################################
+# HTML de plantilla hardcodeado ¡¡¡ NO ELIMINAR!!!
+"""
+html_bruto='''<div style="font-family: 'Times New Roman';">
     <img
       src="https://staging.materialelectricoyclimatizacion.com/img/cms/logos/sinclair-logo-2024.png"
       alt=""
@@ -68,7 +93,9 @@ else:
         <strong>Dimensiones</strong>(mm): <span id="dim"></span><br/>
         <strong>Peso bruto</strong>(Kg): <span id="peso"></span>
     </div>
-</div>'''"""
+</div>'''
+"""
+##################################################################################################################
 # Cargar el HTML en BeautifulSoup
 html_procesado=BeautifulSoup(html_bruto, 'html.parser')
 
@@ -82,41 +109,41 @@ dim_long=input('Introduzca la longitud (ej. 500): ')
 nuevo_peso=input('Introduce el nuevo peso (ej. 18,0): ')
 
 # Preguntar si tiene accesorios
-tiene_accesorios = input("¿Tiene accesorios? (sí/no): ").strip().lower()
+tiene_accesorios=input("¿Tiene accesorios? (sí/no): ").strip().lower()
 
 # Si la respuesta es 'no', eliminar la sección de accesorios
 if tiene_accesorios in ['sí', 'si', 's']:
-    # Mantener la sección de accesorios
+# Mantener la sección de accesorios
     pass
 else:
-    # Eliminar la sección de accesorios
-    accesorios = html_procesado.find(id="accesorios")
+# Eliminar la sección de accesorios
+    accesorios=html_procesado.find(id="accesorios")
     if accesorios:
         accesorios.decompose()
 
-
 # Buscar los elementos por su ID y actualizar su contenido
-html_procesado.find(id='modelo').string = f'SF2-{nuevo_modelo}D3'
-html_procesado.find(id='potfri').string = nuevo_potfri.replace(".", ",")
-html_procesado.find(id='potcal').string = nuevo_potcal.replace(".", ",")
-html_procesado.find(id='dim').string = f'{dim_anch} x {dim_alt} x {dim_long}'
-html_procesado.find(id='peso').string = nuevo_peso.replace(".", ",")
-
+html_procesado.find(id='modelo').string=f'SF2-{nuevo_modelo}D3'
+html_procesado.find(id='potfri').string=nuevo_potfri.replace(".", ",")
+html_procesado.find(id='potcal').string=nuevo_potcal.replace(".", ",")
+html_procesado.find(id='dim').string=f'{dim_anch} x {dim_alt} x {dim_long}'
+html_procesado.find(id='peso').string=nuevo_peso.replace(".", ",")
+##################################################################################################################
+"""
 # Determinar el sistema operativo y establecer la ruta
-"""sistema_operativo = platform.system()
-if sistema_operativo == 'Windows':
-    ruta_salidas_pruebas = os.path.join(os.path.expanduser("~"), "Documents")
-elif sistema_operativo == 'Linux' or sistema_operativo == 'Darwin':  # Darwin es para MacOS
-    ruta_salidas_pruebas = os.path.join(os.path.expanduser("~"), "Documentos")
+sistema_operativo=platform.system()
+if sistema_operativo=='Windows':
+    ruta_salidas_pruebas=os.path.join(os.path.expanduser("~"), "Documents")
+elif sistema_operativo=='Linux' or sistema_operativo=='Darwin':  # Darwin es para MacOS
+    ruta_salidas_pruebas=os.path.join(os.path.expanduser("~"), "Documentos")
 else:
     raise Exception("Sistema operativo no soportado")
 
 if not os.path.exists(os.path.join(ruta_salidas_pruebas, "salidas")):
-    os.makedirs(os.path.join(ruta_salidas_pruebas, "salidas"))"""
-
-#ruta_documentos=os.path.join(ruta_documentos, "Descripciones")
-ruta_salidas_pruebas= './.venv/pruebas/salidas'
-fecha_hora = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")  # Formato: YYYYMMDD_HHMMSS
+    os.makedirs(os.path.join(ruta_salidas_pruebas, "salidas"))
+"""
+##################################################################################################################
+ruta_salidas_pruebas='./.venv/pruebas/salidas'
+fecha_hora=datetime.now().strftime("%Y-%m-%d_%H:%M:%S")  # Formato: YYYYMMDD_HHMMSS
 
 # Crear el nombre del archivo
 nombre_archivo=f'descripción-{html_procesado.find(id="modelo").string.replace("<", ":-::").replace(">", "::-:").replace("/", "_")}-{datetime.now().strftime("%Y-%m-%d_%H:%M:%S")}.html'
