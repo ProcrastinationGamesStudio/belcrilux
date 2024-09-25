@@ -9,12 +9,12 @@ print('\nDirectorio actual: '+os.getcwd()+'\n')
 # Ruta origenes plantillas de prueba:
 ruta_prueba=f'./.venv/pruebas/origenes/plantilla_descripciones.html'
 with open(ruta_prueba, 'r', encoding='utf-8') as archivoHtml:
-    html_bruto = archivoHtml.read()
+    html_bruto=archivoHtml.read()
 
-"""if platform.system() == 'Windows':
-    ruta_excel = os.path.join(os.path.expanduser("~"), "Documents", "./venv/tu_archivo.xlsx")  # Cambia "tu_archivo.xlsx"
-elif platform.system() == 'Linux' or platform.system() == 'Darwin':  # Darwin es para MacOS
-    ruta_excel = os.path.join(os.path.expanduser("~"), "Documentos", "./venv/tu_archivo.xlsx")  # Cambia "tu_archivo.xlsx"
+"""if platform.system()=='Windows':
+    ruta_excel=os.path.join(os.path.expanduser("~"), "Documents", "./venv/tu_archivo.xlsx")  # Cambia "tu_archivo.xlsx"
+elif platform.system()=='Linux' or platform.system()=='Darwin':  # Darwin es para MacOS
+    ruta_excel=os.path.join(os.path.expanduser("~"), "Documentos", "./venv/tu_archivo.xlsx")  # Cambia "tu_archivo.xlsx"
 else:
     raise Exception("Sistema operativo no soportado")"""
 
@@ -23,7 +23,7 @@ else:
 
 # Iterar sobre las filas de la columna 'Nombre'
 """for index, row in pd.read_excel(ruta_excel, engine='openpyxl').iterrows():
-    html_bruto = row["description"]  # Obtener el HTML de la celda "description"""
+    html_bruto=row["description"]  # Obtener el HTML de la celda "description"""
 
 # HTML de plantilla hardcodeada ¡¡¡ NO ELIMINAR!!!
 """html_bruto='''<div style="font-family: 'Times New Roman';">
@@ -82,7 +82,7 @@ dim_long=input('Introduzca la longitud (ej. 500): ')
 nuevo_peso=input('Introduce el nuevo peso (ej. 18,0): ')
 
 # Preguntar si tiene accesorios
-tiene_accesorios = input("¿Tiene accesorios? (sí/no): ").strip().lower()
+tiene_accesorios=input("¿Tiene accesorios? (sí/no): ").strip().lower()
 
 # Si la respuesta es 'no', eliminar la sección de accesorios
 if tiene_accesorios in ['sí', 'si', 's']:
@@ -90,24 +90,24 @@ if tiene_accesorios in ['sí', 'si', 's']:
     pass
 else:
     # Eliminar la sección de accesorios
-    accesorios = html_procesado.find(id="accesorios")
+    accesorios=html_procesado.find(id="accesorios")
     if accesorios:
         accesorios.decompose()
 
 
 # Buscar los elementos por su ID y actualizar su contenido
-html_procesado.find(id='modelo').string = f'SF2-{nuevo_modelo}D3'
-html_procesado.find(id='potfri').string = nuevo_potfri.replace(".", ",")
-html_procesado.find(id='potcal').string = nuevo_potcal.replace(".", ",")
-html_procesado.find(id='dim').string = f'{dim_anch} x {dim_alt} x {dim_long}'
-html_procesado.find(id='peso').string = nuevo_peso.replace(".", ",")
+html_procesado.find(id='modelo').string=f'SF2-{nuevo_modelo}D3'
+html_procesado.find(id='potfri').string=nuevo_potfri.replace(".", ",")
+html_procesado.find(id='potcal').string=nuevo_potcal.replace(".", ",")
+html_procesado.find(id='dim').string=f'{dim_anch} x {dim_alt} x {dim_long}'
+html_procesado.find(id='peso').string=nuevo_peso.replace(".", ",")
 
 # Determinar el sistema operativo y establecer la ruta
-"""sistema_operativo = platform.system()
-if sistema_operativo == 'Windows':
-    ruta_salidas_pruebas = os.path.join(os.path.expanduser("~"), "Documents")
-elif sistema_operativo == 'Linux' or sistema_operativo == 'Darwin':  # Darwin es para MacOS
-    ruta_salidas_pruebas = os.path.join(os.path.expanduser("~"), "Documentos")
+"""sistema_operativo=platform.system()
+if sistema_operativo=='Windows':
+    ruta_salidas_pruebas=os.path.join(os.path.expanduser("~"), "Documents")
+elif sistema_operativo=='Linux' or sistema_operativo=='Darwin':  # Darwin es para MacOS
+    ruta_salidas_pruebas=os.path.join(os.path.expanduser("~"), "Documentos")
 else:
     raise Exception("Sistema operativo no soportado")
 
@@ -115,8 +115,8 @@ if not os.path.exists(os.path.join(ruta_salidas_pruebas, "salidas")):
     os.makedirs(os.path.join(ruta_salidas_pruebas, "salidas"))"""
 
 #ruta_documentos=os.path.join(ruta_documentos, "Descripciones")
-ruta_salidas_pruebas= './.venv/pruebas/salidas'
-fecha_hora = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")  # Formato: YYYYMMDD_HHMMSS
+ruta_salidas_pruebas='./.venv/pruebas/salidas'
+fecha_hora=datetime.now().strftime("%Y-%m-%d_%H:%M:%S")  # Formato: YYYYMMDD_HHMMSS
 
 # Crear el nombre del archivo
 nombre_archivo=f'descripción-{html_procesado.find(id="modelo").string.replace("<", ":-::").replace(">", "::-:").replace("/", "_")}-{datetime.now().strftime("%Y-%m-%d_%H:%M:%S")}.html'
