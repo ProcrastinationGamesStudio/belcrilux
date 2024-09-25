@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e8da423-ca8d-4298-ade3-048fb54f0446" name="Changes" comment="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeady y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2e8da423-ca8d-4298-ade3-048fb54f0446" name="Changes" comment="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeady y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +24,21 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ProcrastinationGamesStudio&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ProcrastinationGamesStudio/belcrilux.git&quot;,
+    &quot;accountId&quot;: &quot;7393ae80-2856-421c-9136-8de937272819&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <hideBySeverity>
@@ -53,7 +66,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/belcrilux/PycharmProjects/pythonProject/.venv/Descripciones",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -99,6 +112,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2e8da423-ca8d-4298-ade3-048fb54f0446" name="Changes" comment="" />
@@ -133,6 +149,17 @@
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeady y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desd Excel" />
