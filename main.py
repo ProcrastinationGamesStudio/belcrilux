@@ -49,7 +49,7 @@ while not pd.isna(marcoDatos.iloc[i_fila_mD, 0]) and marcoDatos.iloc[i_fila_mD, 
     i_fila_mD+=1
 """
 ##################################################################################################################
-# HTML de plantilla hardcodeado ¡¡¡ NO ELIMINAR!!!
+# HTML de plantilla hardcodeado ¡¡¡NO ELIMINAR!!!
 """
 html_bruto='''<div style="font-family: 'Times New Roman';">
     <img
