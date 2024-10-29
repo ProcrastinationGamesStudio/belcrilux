@@ -14,7 +14,7 @@ def salir(variable):
 
 ###########################################################################################
 # Ruta origenes plantillas de prueba:
-ruta_prueba=f'./.venv/pruebas/origenes/plantilla_descripciones-sf-xxxxD3.html'
+ruta_prueba=f'./.venv/pruebas/origenes/plantilla_descripciones.html'
 with open(ruta_prueba,'r',encoding='utf-8') as archivoHtml:
     html_bruto=archivoHtml.read()
 ##################################################################################################################

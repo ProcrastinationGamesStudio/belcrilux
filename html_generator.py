@@ -1,16 +1,15 @@
+""""""
 from bs4 import BeautifulSoup
 
 def generate_html_table(group):
-	"""
-	Genera una tabla HTML para un grupo de datos de una serie, con formato de estilos y
-	rowspan para valores repetidos en cada columna.
-	Devuelve la tabla HTML como un string.
-	"""
+
+	# Genera una tabla HTML para un grupo de datos de una serie, con formato de estilos y rowspan para valores repetidos en cada columna.
+	# Devuelve la tabla HTML como un string.
+
 	html_table = '<table style="border: 1px solid black; width: 100%;">\n'
 	html_table += '<thead style="text-align: center;">\n<tr id="cabeceras" style="background-color: #f2f2f2;">\n'
 
-	headers = ["Modelo", "Enfriamiento (kW)", "Calentamiento (kW)", "Dimensiones (mm [An x Al x Pr])",
-	           "Peso bruto (Kg)"]
+	headers = ["Modelo", "Enfriamiento (kW)", "Calentamiento (kW)", "Dimensiones (mm [An x Al x Pr])", "Peso bruto (Kg)"]
 	for header in headers:
 		html_table += f'<th style="border: 1px solid black; width: 103px; height: 12px;"><strong>{header}</strong></th>\n'
 	html_table += '</tr>\n</thead>\n<tbody style="text-align: center;">\n'
@@ -33,12 +32,11 @@ def generate_html_table(group):
 	html_table += '</tbody>\n</table>\n'
 	return html_table
 
-
 def insert_html_tables_into_template(html_content, series_groups):
-	"""
-	Inserta las tablas HTML generadas en el div con class "listado_variables" del HTML base.
-	Devuelve el HTML modificado como objeto BeautifulSoup.
-	"""
+
+	# Inserta las tablas HTML generadas en el div con class "listado_variables" del HTML base.
+	# Devuelve el HTML modificado como objeto BeautifulSoup.
+
 	soup = BeautifulSoup(html_content, 'html.parser')
 	listado_variables_div = soup.find("div", class_="listado_variables")
 	for series, group in series_groups.items():
@@ -46,3 +44,4 @@ def insert_html_tables_into_template(html_content, series_groups):
 		table_soup = BeautifulSoup(html_table, 'html.parser')
 		listado_variables_div.append(table_soup)
 	return soup
+""""""

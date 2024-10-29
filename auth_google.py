@@ -1,62 +1,41 @@
-"""import os
-from io import BytesIO
-from googleapiclient.discovery import build
-from googleapiclient.http import MediaFileUpload
-from google.oauth2.credentials import Credentials
-from google.auth.transport.requests import Request
-from googleapiclient.http import MediaIoBaseDownload
-from google_auth_oauthlib.flow import InstalledAppFlow
-
-# Alcance necesario para acceder al archivo en Google Drive
-SCOPES = ['https://www.googleapis.com/auth/drive']
-
-def authenticate_google_drive():
-    ""
-    Autentica el acceso a Google Drive usando OAuth 2.0.
-    Devuelve un servicio autenticado para hacer solicitudes a la API de Google Drive.
-    ""
-    creds = None
-    if os.path.exists('token.json'):
-        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
-            creds = flow.run_local_server(port=0)
-        with open('token.json', 'w') as token:
-            token.write(creds.to_json())
-    return build('drive', 'v3', credentials=creds)
-
-def download_excel_from_drive(file_id):
-    ""
-    Descarga un archivo Excel desde Google Drive usando el `file_id` especificado.
-    Devuelve el archivo en formato binario.
-    ""
-    service = authenticate_google_drive()
-    request = service.files().get_media(fileId=file_id)
-    file = BytesIO()
-    downloader = MediaIoBaseDownload(file, request)
-    done = False
-    while not done:
-        _, done = downloader.next_chunk()
-    file.seek(0)
-    return file  # Devuelve el archivo binario (BytesIO) sin procesarlo
-
-def upload_excel_to_drive(file_id, output_path='updated_file.xlsx'):
-    ""
-    Sube el archivo Excel actualizado a Google Drive utilizando el `file_id` del archivo original.
-    ""
-    service = authenticate_google_drive()
-    media = MediaFileUpload(output_path, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-    service.files().update(fileId=file_id, media_body=media).execute()"""
+""""""
+import json
+import gspread
+import traceback
 import pandas as pd
+from google.oauth2.service_account import Credentials
 
-def download_public_google_sheet(sheet_id, sheet_name):
-    """
-    Descarga el contenido de una hoja pública de Google Sheets como un DataFrame de pandas.
-    """
-    # URL para descargar la hoja en formato CSV
-    url = f'https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}'
-    df = pd.read_csv(url)
-    return df
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+CREDENCIALES = "./JSONs/credentials.json"
+
+def try_authenticate_and_get_sheet():
+
+   # Autentica usando credenciales de servicio y devuelve el archivo de Google Sheets.
+   # Si falla, muestra el error y devuelve None.
+
+    try:
+        with open(CREDENCIALES, "r") as file:
+            credenciales_json = json.load(file)
+        file_id = credenciales_json["file_id"]
+        creds = Credentials.from_service_account_file(CREDENCIALES, scopes=SCOPES)
+        client = gspread.authorize(creds)
+        sheet = client.open_by_key(file_id)
+        return sheet
+    except Exception as e:
+        print("Error de autenticación para edición en Google Sheets: "+str(traceback.print_exc()))
+        return None
+
+def download_google_sheet_as_dict(sheet):
+
+   # Descarga todas las hojas de un archivo de Google Sheets autenticado como DataFrames.
+   # Devuelve un diccionario con los nombres de las hojas y los DataFrames correspondientes.
+
+    sheets_dict = {}
+    try:
+        for worksheet in sheet.worksheets():
+            df = pd.DataFrame(worksheet.get_all_records())
+            sheets_dict[worksheet.title] = df
+    except Exception as e:
+        print("Error al descargar hojas de Google Sheets: "+str(traceback.print_exc()))
+    return sheets_dict
+""""""
