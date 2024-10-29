@@ -7,11 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e8da423-ca8d-4298-ade3-048fb54f0446" name="Changes" comment="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeady y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel">
+    <list default="true" id="2e8da423-ca8d-4298-ade3-048fb54f0446" name="Changes" comment="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeado y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_9_24,_16_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -32,6 +31,12 @@
       <list>
         <option value="ProcrastinationGamesStudio &lt;procrastinationgamesstudio@gmail.com&gt;" />
       </list>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -78,10 +83,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.calculo-porcentajes-descuentos.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;pruebas&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/belcrilux/PycharmProjects/pythonProject/.venv&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/belcrilux/Documentos/BaseDatosOdoo/oca&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -99,9 +105,53 @@
       <recent name="$PROJECT_DIR$/.venv/origins" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="autoPrestaShop" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="calculo-porcentajes-descuentos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="autoPrestaShop" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documentos" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Documentos/calculo-porcentajes-descuentos.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="pythonProject" />
+      <module name="autoPrestaShop" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -122,6 +172,91 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="autoPrestaShop" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="autoPrestaShop" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="autoPrestaShop" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="autoPrestaShop" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="autoPrestaShop" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.calculo-porcentajes-descuentos" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -182,7 +317,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727270102458</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeady y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel">
+      <option name="closed" value="true" />
+      <created>1728642618279</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728642618279</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeado y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel">
+      <option name="closed" value="true" />
+      <created>1728642715109</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728642715109</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -213,8 +364,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeady y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desd Excel" />
-    <MESSAGE value="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeady y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel" />
     <MESSAGE value="Mejora de Py3.8 a Py3.9 y pequeños cambios sin importancia (quitar espacios de más, acentos, etc)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejora de Py3.8 a Py3.9 y pequeños cambios sin importancia (quitar espacios de más, acentos, etc)" />
+    <MESSAGE value="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeady y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel" />
+    <MESSAGE value="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeado y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Realizamos la automatizacion de la creación de una plantilla tipo para, en este caso, Sinclair (prueba).&#10;&#10;Lee desde codigo harcodeado y desde archivo html&#10;&#10;Objetivo:&#10;Leer y generar desde Excel" />
   </component>
 </project>

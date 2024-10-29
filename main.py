@@ -1,11 +1,18 @@
 import os
+import sys
 import platform
 #import pandas as pd
 from bs4 import BeautifulSoup
 from datetime import datetime
 
 #print('\nDirectorio actual: '+os.getcwd()+'\n')
+##########################################Métodos##########################################
+def salir(variable):
+    if "salir" in variable:
+        print("Saliendo...")
+        sys.exit()
 
+###########################################################################################
 # Ruta origenes plantillas de prueba:
 ruta_prueba=f'./.venv/pruebas/origenes/plantilla_descripciones-sf-xxxxD3.html'
 with open(ruta_prueba,'r',encoding='utf-8') as archivoHtml:
@@ -79,13 +86,21 @@ html_procesado=BeautifulSoup(html_bruto,'html.parser')
 
 # Pedir al usuario que introduzca nuevos valores para los campos
 nuevo_modelo=input('¿Cual es el modelo de la maquina?: ')
+salir(nuevo_modelo)
 nuevo_probeedor=input('¿Cual es el probeedor de la maquina?: ').strip().lower()
+salir(nuevo_probeedor)
 nuevo_potfri=input('Introduce la nueva potencia de enfriamiento (ej. 3,00): ')
+salir(nuevo_potfri)
 nuevo_potcal=input('Introduce la nueva potencia de calentamiento (ej. 3,50): ')
+salir(nuevo_potcal)
 dim_anch=input('Introduzca la anchura (ej. 700): ')
+salir(dim_anch)
 dim_alt=input('Introduzca la altura (ej. 250): ')
+salir(dim_alt)
 dim_long=input('Introduzca la longitud (ej. 500): ')
+salir(dim_long)
 nuevo_peso=input('Introduce el nuevo peso (ej. 18,0): ')
+salir(nuevo_peso)
 
 # Preguntar cuántas curiosidades tiene
 num_curiosidades=int(input("¿Cuántas curiosidades tiene el producto?: "))
