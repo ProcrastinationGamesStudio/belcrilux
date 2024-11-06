@@ -16,10 +16,9 @@ def try_authenticate_and_get_sheet():
     try:
         with open(CREDENCIALES, "r") as file:
             credenciales_json = json.load(file)
-        file_id = credenciales_json["file_id"]
         creds = Credentials.from_service_account_file(CREDENCIALES, scopes=SCOPES)
         client = gspread.authorize(creds)
-        sheet = client.open_by_key(file_id)
+        sheet = client.open_by_key(credenciales_json["file_id"])
         return sheet
     except Exception as e:
         print("Error de autenticación para edición en Google Sheets: "+str(traceback.print_exc()))
